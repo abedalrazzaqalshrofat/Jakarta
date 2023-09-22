@@ -1,22 +1,20 @@
 package entities;
 
 import jakarta.persistence.*;
-
 import java.util.List;
 
 @Entity
 @Table(name = "student")
+@Access(AccessType.PROPERTY)
 public class Student extends BaseEntity {
 
-    @Column(name = "student_name", nullable = false)
-    private String studentName;
 
-    @ElementCollection
-    @CollectionTable(name = "student_identity",joinColumns = @JoinColumn(name = "student_id"))
+    private String studentName;
     private List<IdentityCard> identityCard;
 
 
 
+    @Column(name = "student_name", nullable = false)
     public String getStudentName() {
         return studentName;
     }
@@ -25,6 +23,8 @@ public class Student extends BaseEntity {
         this.studentName = studentName;
     }
 
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "student_identity",joinColumns = @JoinColumn(name = "student_id"))
     public List<IdentityCard> getIdentityCard() {
         return identityCard;
     }
@@ -32,4 +32,7 @@ public class Student extends BaseEntity {
     public void setIdentityCard(List<IdentityCard> identityCard) {
         this.identityCard = identityCard;
     }
+
+
+
 }
