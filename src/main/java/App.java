@@ -1,14 +1,11 @@
-package another;
-
-import entities.Job;
-import entities.Person;
+import entities.IdentityCard;
+import entities.Student;
 import jakarta.persistence.*;
 
-import java.text.DateFormat;
-import java.text.NumberFormat;
 import java.time.LocalDate;
+import java.time.Month;
 
-public class Main {
+public class App {
 
     public static void main(String[] args) {
 
@@ -16,17 +13,11 @@ public class Main {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("persistence_normal");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-
-        Job job = new Job();
-        job.setJobName("Java developer");
-
+        Student student = entityManager.find(Student.class, 1);
         EntityTransaction entityTransaction = entityManager.getTransaction();
         entityTransaction.begin();
-        final Person person = new Person();
-        person.setName("abed");
-        person.setLastName("Al-Sharafat");
-        person.setJob(job);
-        entityManager.persist(person);
+        student.setStudentName("Abedalrazzzaq");
+        entityManager.persist(student);
         entityTransaction.commit();
 
 
