@@ -11,16 +11,19 @@ import java.util.List;
 
  */
 
+
 @Entity
 @Table(name = "student")
+@Access(AccessType.PROPERTY)
 public class Student extends BaseEntity {
 
-    @Column(name = "student_name", nullable = false, columnDefinition = "VARCHAR(255) DEFAULT 'unknown' ")
     private String studentName;
     private List<IdentityCard> identityCard;
 
 
+    private List<Course> courses;
 
+    @Column(name = "student_name", nullable = false, columnDefinition = "VARCHAR(255) DEFAULT 'unknown' ")
     public String getStudentName() {
         return studentName;
     }
@@ -29,9 +32,9 @@ public class Student extends BaseEntity {
         this.studentName = studentName;
     }
 
-    @Access(AccessType.PROPERTY)
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "student_identity",joinColumns = @JoinColumn(name = "student_id"))
+    @Access(AccessType.PROPERTY)
     public List<IdentityCard> getIdentityCard() {
         return identityCard;
     }
@@ -40,12 +43,26 @@ public class Student extends BaseEntity {
         this.identityCard = identityCard;
     }
 
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "student_courses",
+            joinColumns = {@JoinColumn(name = "student_id")},
+            inverseJoinColumns = {@JoinColumn(name = "course_id")}
+    )
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
+    }
 
     @Override
     public String toString() {
         return "Student{" +
                 "studentName='" + studentName + '\'' +
                 ", identityCard=" + identityCard +
-                ", super " +super.toString()+'}';
+                ", super " +super.toString()+
+                "courses " + courses+'}';
     }
 }

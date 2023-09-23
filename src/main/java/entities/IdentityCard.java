@@ -1,11 +1,23 @@
 package entities;
 
+import jakarta.persistence.Access;
+import jakarta.persistence.AccessType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
 import java.time.LocalDate;
 
+/*
+All such classes in the entity hierarchy whose access type is defaulted in this way must be consistent in
+their placement of annotations on either fields or properties, such that a single, consistent default
+access type applies within the hierarchy. Any embeddable classes used by such classes will have the
+same access type as the default access type of the hierarchy unless the Access annotation is specified as
+defined below
+
+ */
+
 @Embeddable
+@Access(AccessType.FIELD)
 public class IdentityCard {
 
     public IdentityCard(String nationality, String nationalId, LocalDate dateOfBirth) {

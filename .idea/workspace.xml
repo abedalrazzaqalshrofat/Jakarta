@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb49e7a3-4591-48f9-8192-559d5050ca04" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Course.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/IdentityCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/IdentityCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entities/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Student.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +95,7 @@
       <workItem from="1695290496093" duration="637000" />
       <workItem from="1695374899270" duration="56000" />
       <workItem from="1695401397093" duration="15010000" />
-      <workItem from="1695454567429" duration="2886000" />
+      <workItem from="1695454567429" duration="6882000" />
     </task>
     <servers />
   </component>
@@ -107,6 +109,20 @@
     <option featureType="dependencySupport" implementationName="executable:kubectl" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/entities/Course.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/entities/Course.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader" memberName="unnamedModule" />

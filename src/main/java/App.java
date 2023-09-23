@@ -1,3 +1,4 @@
+import entities.Course;
 import entities.IdentityCard;
 import entities.Student;
 import jakarta.persistence.*;
@@ -16,12 +17,9 @@ public class App {
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
 
-        Student student = new Student();
-        student.setStudentName("Abdalrazaq");
-        student.setIdentityCard(List.of(new IdentityCard("Jor","9971015143342", LocalDate.of(1997, Month.MARCH,27))));
-        entityManager.persist(student);
+        Course course = entityManager.find(Course.class,2);
 
-
+        course.getStudents().forEach(System.out::println);
 
         transaction.commit();
 
