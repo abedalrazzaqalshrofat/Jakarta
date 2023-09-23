@@ -18,7 +18,7 @@ public class App {
 
         Student student = new Student();
         student.setStudentName("Abdalrazaq");
-        student.setIdentityCard(List.of(new IdentityCard("Jor","9971015142", LocalDate.of(1997, Month.MARCH,27))));
+        student.setIdentityCard(List.of(new IdentityCard("Jor","9971015143342", LocalDate.of(1997, Month.MARCH,27))));
         entityManager.persist(student);
 
 

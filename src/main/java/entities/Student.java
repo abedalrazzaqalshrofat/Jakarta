@@ -15,7 +15,7 @@ import java.util.List;
 @Table(name = "student")
 public class Student extends BaseEntity {
 
-    @Column(name = "student_name", nullable = false)
+    @Column(name = "student_name", nullable = false, columnDefinition = "VARCHAR(255) DEFAULT 'unknown' ")
     private String studentName;
     private List<IdentityCard> identityCard;
 
