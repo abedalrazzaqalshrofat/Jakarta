@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.time.Month;
-import java.util.ArrayList;
 import java.util.List;
 
 public class App {
@@ -17,10 +16,16 @@ public class App {
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
 
-        Student student = entityManager.find(Student.class, 1);
-        System.out.println(student);
+        Student student = new Student();
+        student.setStudentName("Abdalrazaq");
+        student.setIdentityCard(List.of(new IdentityCard("Jor","9971015142", LocalDate.of(1997, Month.MARCH,27))));
+        entityManager.persist(student);
+
+
 
         transaction.commit();
+
+
     }
 
 

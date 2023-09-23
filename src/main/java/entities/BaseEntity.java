@@ -44,11 +44,22 @@ public abstract class BaseEntity {
 
     @PrePersist
     public void prePersist(){
-        createdAt = LocalDateTime.now();
+        if (createdAt == null)
+            createdAt = LocalDateTime.now();
     }
 
     @PreUpdate
     public void preUpdate(){
-        updatedAt = LocalDateTime.now();
+        if (updatedAt == null)
+            updatedAt = LocalDateTime.now();
+    }
+
+    @Override
+    public String toString() {
+        return "BaseEntity{" +
+                "id=" + id +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
     }
 }

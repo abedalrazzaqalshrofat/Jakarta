@@ -50,4 +50,13 @@ public class IdentityCard {
     public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
+
+    @Override
+    public String toString() {
+        return "IdentityCard{" +
+                "nationality='" + nationality + '\'' +
+                ", nationalId='" + nationalId + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                '}';
+    }
 }
