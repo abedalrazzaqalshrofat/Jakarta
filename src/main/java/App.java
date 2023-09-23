@@ -1,11 +1,6 @@
-import entities.Course;
-import entities.IdentityCard;
-import entities.Student;
+import entities.University;
 import jakarta.persistence.*;
 
-import java.time.LocalDate;
-import java.time.Month;
-import java.util.List;
 
 public class App {
 
@@ -17,10 +12,11 @@ public class App {
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
 
-        Course course = entityManager.find(Course.class,2);
-
-        course.getStudents().forEach(System.out::println);
-
+        University university = new University();
+        university.setUniversityBranch("Aqaba");
+        university.setUniversityName("Al-Balqaa Applied");
+        university.setInfo("Universities created at 1995");
+        entityManager.persist(university);
         transaction.commit();
 
 

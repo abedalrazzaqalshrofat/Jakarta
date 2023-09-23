@@ -21,6 +21,7 @@ public class Student extends BaseEntity {
     private List<IdentityCard> identityCard;
 
 
+
     private List<Course> courses;
 
     @Column(name = "student_name", nullable = false, columnDefinition = "VARCHAR(255) DEFAULT 'unknown' ")
