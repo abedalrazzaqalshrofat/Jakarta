@@ -1,4 +1,6 @@
+import entities.College;
 import entities.University;
+import entities.UniversityId;
 import jakarta.persistence.*;
 
 
@@ -12,11 +14,18 @@ public class App {
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
 
-        University university = new University();
-        university.setUniversityBranch("Aqaba");
-        university.setUniversityName("Al-Balqaa Applied");
-        university.setInfo("Universities created at 1995");
-        entityManager.persist(university);
+        UniversityId universityId = new UniversityId();
+
+        universityId.setUniversityBranch("Amman");
+        universityId.setUniversityName("Al-Balqaa Applied");
+
+        University university = entityManager.find(University.class, universityId);
+
+        College college = new College();
+        college.setCollegeMajor("Since");
+        college.setCollegeName("Abdullah II IT");
+        college.setUniversity(university);
+        entityManager.persist(college);
         transaction.commit();
 
 
