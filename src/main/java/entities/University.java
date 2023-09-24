@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 
 @Entity
 @IdClass(UniversityId.class)
-@Access(AccessType.FIELD)
 public class University {
 
     @Id

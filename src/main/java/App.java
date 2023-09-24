@@ -12,14 +12,22 @@ public class App {
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
 
+        DepartmentId departmentId = new DepartmentId();
+        departmentId.setDepartmentName("IT");
+        departmentId.setDepartmentField("Since");
+
+        Department department = new Department();
+        department.setDepartmentField(departmentId.getDepartmentField());
+        department.setDepartmentName(departmentId.getDepartmentName());
+
         UniversityId universityId = new UniversityId();
-        universityId.setUniversityName("Al-Balqaa Applied");
         universityId.setUniversityBranch("Amman");
+        universityId.setUniversityName("Al-Balqaa Applied");
 
         University university = entityManager.find(University.class, universityId);
+        department.setUniversity(university);
 
-        System.out.println(university);
-
+        entityManager.persist(department);
 
         transaction.commit();
 
