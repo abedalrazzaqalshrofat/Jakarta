@@ -5,9 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb49e7a3-4591-48f9-8192-559d5050ca04" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/College.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Department.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entities/DepartmentId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Ministry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entities/MinistryType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Signature.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/College.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/College.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/IdentityCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/IdentityCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/University.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/University.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +49,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/abed.alshorofat/Documents/NetBeansProjects/care-ware/care-ware-hr&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -95,7 +104,9 @@
       <workItem from="1695401397093" duration="15010000" />
       <workItem from="1695454567429" duration="6882000" />
       <workItem from="1695467356135" duration="1883000" />
-      <workItem from="1695483771404" duration="959000" />
+      <workItem from="1695483771404" duration="8148000" />
+      <workItem from="1695561982186" duration="58000" />
+      <workItem from="1695568040699" duration="3534000" />
     </task>
     <servers />
   </component>

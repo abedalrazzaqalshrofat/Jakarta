@@ -1,11 +1,9 @@
 package entities;
 
-import jakarta.persistence.Access;
-import jakarta.persistence.AccessType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 /*
 All such classes in the entity hierarchy whose access type is defaulted in this way must be consistent in
@@ -13,6 +11,12 @@ their placement of annotations on either fields or properties, such that a singl
 access type applies within the hierarchy. Any embeddable classes used by such classes will have the
 same access type as the default access type of the hierarchy unless the Access annotation is specified as
 defined below
+
+An embeddable class (including an embeddable class within another embeddable class) that is
+contained within an element collection must not contain an element collection, nor may it contain a
+relationship to an entity other than a many-to-one or one-to-one relationship. The embeddable class
+must be on the owning side of such a relationship and the relationship must be mapped by a foreign
+key mapping.
 
  */
 
@@ -34,6 +38,10 @@ public class IdentityCard {
 
     @Column(name = "date_of_birth", nullable = false)
     private LocalDate dateOfBirth;
+
+    @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+    private Ministry ministry;
+
 
     public IdentityCard() {
 
@@ -61,6 +69,14 @@ public class IdentityCard {
 
     public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public Ministry getMinistry() {
+        return ministry;
+    }
+
+    public void setMinistry(Ministry ministry) {
+        this.ministry = ministry;
     }
 
     @Override

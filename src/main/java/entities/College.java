@@ -2,7 +2,7 @@ package entities;
 
 import jakarta.persistence.*;
 
-@Entity
+//@Entity
 public class College extends BaseEntity {
 
     @Column(name = "college_name")
@@ -12,9 +12,8 @@ public class College extends BaseEntity {
     private String collegeMajor;
 
 
+    @Id
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "universityName", referencedColumnName = "universityName")
-    @JoinColumn(name = "universityBranch", referencedColumnName = "universityBranch")
     private University university;
 
     public University getUniversity() {

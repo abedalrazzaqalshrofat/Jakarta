@@ -1,17 +1,18 @@
 package entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.IdClass;
+import jakarta.persistence.*;
 
 @Entity
 @IdClass(UniversityId.class)
+@Access(AccessType.FIELD)
 public class University {
 
     @Id
+    @Column(name = "university_name")
     private String universityName;
 
     @Id
+    @Column(name = "university_branch")
     private String universityBranch;
 
     private String info;
@@ -38,5 +39,14 @@ public class University {
 
     public void setInfo(String info) {
         this.info = info;
+    }
+
+    @Override
+    public String toString() {
+        return "University{" +
+                "universityName='" + universityName + '\'' +
+                ", universityBranch='" + universityBranch + '\'' +
+                ", info='" + info + '\'' +
+                '}';
     }
 }
